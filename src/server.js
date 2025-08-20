@@ -11,6 +11,8 @@ import Message from "./models/messageModel.js";
 dotenv.config();
 connectDB();
 
+const PORT = process.env.PORT || 5000;
+
 const app = express();
 app.use(cors({ origin: process.env.NEXT_URL || "http://localhost:3000" })); // allow frontend
 app.use(express.json());
@@ -81,4 +83,4 @@ app.get("/api/messages/:user1/:user2", async (req, res) => {
   }
 });
 
-server.listen(5000, () => console.log("Server running on port 5000"));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
