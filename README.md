@@ -33,7 +33,7 @@ https://kalamkunja-socket.onrender.com
 - **Backend Framework:** Express.js  
 - **Realtime:** Socket.IO  
 - **Database:** MongoDB (chat persistence)  
-- **Deployment:** Node.js / Docker  
+- **Deployment:** Render/Node.Js
 
 ---
 
