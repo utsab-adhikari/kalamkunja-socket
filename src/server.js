@@ -7,6 +7,8 @@ import dotenv from "dotenv";
 import connectDB from "./db/ConnectDB.js";
 import User from "./models/userModel.js";
 import Message from "./models/messageModel.js";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 connectDB();
@@ -40,7 +42,11 @@ io.on("connection", (socket) => {
     const receiverEmail = receiver.toLowerCase().trim();
 
     try {
-      const msg = await Message.create({ sender: senderEmail, receiver: receiverEmail, text });
+      const msg = await Message.create({
+        sender: senderEmail,
+        receiver: receiverEmail,
+        text,
+      });
 
       // Emit to receiver
       io.to(receiverEmail).emit("personalMessage", msg);
@@ -58,7 +64,13 @@ io.on("connection", (socket) => {
   });
 });
 
-// --- REST APIs ---
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 app.get("/api/users", async (req, res) => {
   try {
     const users = await User.find({}, "name email image");

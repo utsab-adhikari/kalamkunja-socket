@@ -2,9 +2,9 @@
   <img src="https://kalamkunja.vercel.app/logo_1.png" alt="KalamKunja Socket Logo" width="120"/>
 </p>
 
-# KalamKunja - Socket Server
+# Kalamkunja - Socket Server
 
-⚡ **KalamKunja Socket Server** powers the **real-time communication features** of the KalamKunja platform.  
+⚡ **Kalamkunja Socket Server** powers the **real-time communication features** of the Kalamkunja platform.  
 This repository contains the **Express.js + Socket.IO backend** responsible for chat, notifications, and live updates.
 
 🔗 **Frontend Repo:** [KalamKunja Next Frontend](https://github.com/utsab-adhikari/KalamKunja)

@@ -1,69 +1,72 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Socket.IO chat</title>
-    <style>
-      body {
-        margin: 0;
-        padding-bottom: 3rem;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalamkunja - Socket Server</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial; background: #f5f6fa; color: #333; }
+    header { text-align: center; padding: 30px 20px; background: linear-gradient(135deg,#1e293b,#3b82f6); color: white; }
+    header img { width: 100px; border-radius: 20px; margin-bottom: 15px; transition: transform 0.3s; }
+    header img:hover { transform: rotate(10deg); }
+    header h1 { margin-bottom: 10px; font-size: 2rem; }
+    header p { font-size: 1rem; max-width: 600px; margin: auto; }
+    .container { max-width: 900px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media(min-width:700px){ .container { grid-template-columns: 1fr 1fr; } }
+    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display:flex; flex-direction:column; justify-content:space-between; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+    .card h2 { color: #1e40af; margin-bottom: 10px; font-size: 1.2rem; }
+    .card p { flex-grow: 1; }
+    .links a { display:inline-block; margin:8px 6px; text-decoration:none; padding:8px 15px; border-radius:6px; background:#1e40af; color:white; transition: background 0.3s, transform 0.3s; }
+    .links a:hover { background:#1e3a8a; transform: scale(1.05); }
+    footer { text-align:center; padding:20px; margin-top:40px; color:#555; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://kalamkunja.vercel.app/logo_1.png" alt="KalamKunja Socket Logo"/>
+    <h1>Kalamkunja - Socket Server</h1>
+    <p>Real-time chat, notifications, and live updates for the Kalamkunja platform.</p>
+  </header>
 
-      #form {
-        background: rgba(0, 0, 0, 0.15);
-        padding: 0.25rem;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        height: 3rem;
-        box-sizing: border-box;
-        backdrop-filter: blur(10px);
-      }
-      #input {
-        border: none;
-        padding: 0 1rem;
-        flex-grow: 1;
-        border-radius: 2rem;
-        margin: 0.25rem;
-      }
-      #input:focus {
-        outline: none;
-      }
-      #form > button {
-        background: #333;
-        border: none;
-        padding: 0 1rem;
-        margin: 0.25rem;
-        border-radius: 3px;
-        outline: none;
-        color: #fff;
-      }
+  <div class="container">
+    <div class="card">
+      <h2>About This Server</h2>
+      <p>
+        The <strong>Kalamkunja Socket Server</strong> uses <strong>Express.js + Socket.IO</strong> 
+        to provide real-time chat, notifications, and group interactions for users.  
+      </p>
+      <p>
+        It integrates with the <strong>Kalamkunja frontend</strong> for seamless real-time experiences.
+      </p>
+    </div>
 
-      #messages {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      #messages > li {
-        padding: 0.5rem 1rem;
-      }
-      #messages > li:nth-child(odd) {
-        background: #efefef;
-      }
-    </style>
-  </head>
-  <body>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-      const socket = io();
-    </script>
-  </body>
+    <div class="card">
+      <h2>Frontend</h2>
+      <p>Visit the main frontend application of Kalamkunja.</p>
+      <a href="https://kalamkunja.vercel.app" target="_blank">🌐 Open Frontend</a>
+    </div>
+
+    <div class="card">
+      <h2>GitHub Repository</h2>
+      <p>Explore the source code for this Socket server.</p>
+      <a href="https://github.com/utsab-adhikari/kalamkunja-socket" target="_blank">📂 GitHub Repo</a>
+    </div>
+
+    <div class="card">
+      <h2>Connect with Me</h2>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/utsabadhikari" target="_blank">LinkedIn</a>
+        <a href="https://github.com/utsab-adhikari" target="_blank">GitHub</a>
+        <a href="https://wa.me/9867508725" target="_blank">WhatsApp</a>
+        <a href="mailto:utsabadhikari075@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Kalamkunja | Developed by Utsab Adhikari
+  </footer>
+</body>
 </html>
